@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311193655) do
+ActiveRecord::Schema.define(version: 20150311225123) do
+
+  create_table "emoticons", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "images", force: :cascade do |t|
     t.string   "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "post_id"
   end
 
   create_table "languages", force: :cascade do |t|
@@ -29,10 +36,10 @@ ActiveRecord::Schema.define(version: 20150311193655) do
     t.string   "top_copy"
     t.string   "bottom_copy"
     t.integer  "user_id"
-    t.integer  "image_id"
     t.integer  "language_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "emoticon_id"
   end
 
   create_table "users", force: :cascade do |t|

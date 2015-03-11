@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  top_copy: MyString
+  bottom_copy: MyString
+  user_id: 1
+  image_id: 1
+  language_id: 1
+
+two:
+  top_copy: MyString
+  bottom_copy: MyString
+  user_id: 1
+  image_id: 1
+  language_id: 1

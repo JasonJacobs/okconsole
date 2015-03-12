@@ -1,9 +1,12 @@
 <h1>Emotions</h1>
 
-
-<% @emotions.each do |emotion| %>
+<%= form_for(@post) do |f| %>
+<form action="/posts" method="post">
   <p>
-  <%= render('posts/XXXXXXXXXXXXXX', :emotion => emotion) %>
+    <%= f.label :top_copy %>
+    <%= f.text_field :top_copy %>    
   </p>
-<% end %>
 
+
+  <%= f.submit %>
+<% end %>

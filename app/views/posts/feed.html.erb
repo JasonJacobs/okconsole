@@ -1,8 +1,9 @@
 <h1>Feed</h1>
 
-
+<ol>
 <% @posts.each do |post| %>
-  <p>
-  <%= render('posts/XXXXXXXXXXXXXX', :post => post) %>
-  </p>
+  <li><%= link_to post.top_copy, post_path(post) %></li>
 <% end %>
+</ol>
+
+<p><%= link_to "New Post", new_post_path %></p>

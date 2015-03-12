@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.create
+    @post = Post.new
     render 'posts/emotions'
   end
 

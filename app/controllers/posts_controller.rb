@@ -13,12 +13,12 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
     render 'posts/emotions'
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
       # Redirect NOT WORKING properly - currently going to Preview
@@ -39,6 +39,11 @@ class PostsController < ApplicationController
     else
       render 'posts/input'
     end
+  end
+
+  def upvote
+    @post.upvote_by current_user
+    redirect_to :back
   end
 
 

@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
+
+
+  post 'posts/copy_sessions' => 'posts#copy_sessions', as: :copy_sessions
+
+  get 'posts/graphics' => 'posts#graphics', as: :graphics
+
+  post 'posts/graphics' => 'posts#graphics_sessions', as: :graphics_sessions
+
+  get 'posts/preview' => 'posts#preview', as: :preview
+
+
   resources :emoticons
 
   resources :images
@@ -13,6 +24,10 @@ Rails.application.routes.draw do
       put "like", to: "posts#upvote"
     end
   end
+
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

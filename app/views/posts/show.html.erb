@@ -1,1 +1,17 @@
-<h1>Show</h1>
+<h1>Show That Shit</h1>
+
+<%= @post.top_copy %>
+<br/>
+<%= @post.bottom_copy %>
+<br/>
+<%= @post.user.created_at %>
+
+<div class="col-md-6">
+  <div class="btn-group pull-right">
+    <%= link_to like_post_path(@post), method: :put, class: "btn btn-default" do %>
+      <span class="glyphicon glyphicon-heart">
+        <%= @post.get_upvotes.size %>
+      </span>
+    <% end %>
+  </div>
+</div>

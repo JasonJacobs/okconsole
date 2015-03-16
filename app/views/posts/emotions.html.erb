@@ -1,11 +1,12 @@
 <h1>Emotions</h1>
 
-<%= form_for(@post) do |f| %>
+<%= form_for(@post, url: copy_sessions_path) do |f| %>
 
   <p>
     <%= f.label :top_copy %>
     <%= f.text_field :top_copy %>    
   </p>
+
 
 
   <%= f.submit %>

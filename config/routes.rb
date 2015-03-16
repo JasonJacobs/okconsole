@@ -13,8 +13,6 @@ Rails.application.routes.draw do
 
   resources :emoticons
 
-  resources :images
-
   resources :languages
 
   resources :users

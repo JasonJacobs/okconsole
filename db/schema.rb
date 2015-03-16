@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312200058) do
+ActiveRecord::Schema.define(version: 20150316205153) do
 
   create_table "emoticons", force: :cascade do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150312200058) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "emoticon_id"
+    t.string   "image_url"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"

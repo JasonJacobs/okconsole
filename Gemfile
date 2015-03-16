@@ -12,7 +12,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'devise', '~> 3.4.1'
 gem 'jbuilder', '~> 2.0'
-gem 'paperclip', '~> 4.2.1'
+gem 'unirest', '~> 1.1.2'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'sdoc', '~> 0.4.0', group: :doc

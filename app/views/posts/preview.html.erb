@@ -1,9 +1,10 @@
 <h1>Preview</h1>
 
-<%= session[:top_copy] %>
+<%= image_tag(@url) %>
 <br/>
-<%= session[:bottom_copy] %>
+<%= link_to "Generate New Image", preview_path %>
 <br/>
+
 <%= session[:emoticon_id] %>
 <br/>
 <%= session[:language_id] %>

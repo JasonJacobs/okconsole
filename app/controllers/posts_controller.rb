@@ -24,6 +24,7 @@ class PostsController < ApplicationController
     @post.bottom_copy = session[:bottom_copy]
     @post.emoticon_id = session[:emoticon_id]
     @post.language_id = session[:language_id]
+    @post.image_url = session[:image_url]
     if @post.save
      redirect_to @post
     else
@@ -66,7 +67,8 @@ class PostsController < ApplicationController
   end
 
   def preview
-
+    @url = "http://apimeme.com/meme?meme=#{Post.random_option}&top=#{session[:top_copy]}&bottom=#{session[:bottom_copy]}"
+    session[:image_url] = @url
   end
 
 

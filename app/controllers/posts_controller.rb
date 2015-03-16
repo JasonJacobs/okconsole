@@ -15,22 +15,23 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    render 'posts/emotions'
+    render 'posts/input'
   end
 
   def create
     @post = current_user.posts.build#(post_params)
     @post.top_copy = session[:top_copy]
     @post.bottom_copy = session[:bottom_copy]
+    @post.emoticon_id = session[:emoticon_id]
+    @post.language_id = session[:language_id]
     if @post.save
      redirect_to @post
     else
-      render 'emotions'
+      render 'posts/input'
     end
   end
 
   def edit
-    # Need to lock this so people can't alter old posts
     render 'posts/input'
   end
 
@@ -38,7 +39,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to @post, notice: "Edited"
     else
-      render 'posts/input'
+      render 'posts/emotions'
     end
   end
 
@@ -49,17 +50,18 @@ class PostsController < ApplicationController
 
   def copy_sessions
     session[:top_copy] = params["post"]["top_copy"]
-    # session[:bottom_copy] = params["post"]["bottom_copy"]
+    session[:bottom_copy] = params["post"]["bottom_copy"]
     redirect_to graphics_path
   end
 
   def graphics
     @post = Post.new
-    render 'posts/input'
+    render 'posts/emotions'
   end
 
   def graphics_sessions
-    session[:bottom_copy] = params["post"]["bottom_copy"]
+    session[:emoticon_id] = params["post"]["emoticon_id"]
+    session[:language_id] = params["post"]["language_id"]
     redirect_to preview_path
   end
 

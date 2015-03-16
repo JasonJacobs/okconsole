@@ -1,10 +1,15 @@
-<h1>Emotions</h1>
+<h1>Copy</h1>
 
-<%= form_for(@post, url: copy_sessions_path) do |f| %>
+<%= form_for(@post, url: graphics_sessions_path) do |f| %>
 
   <p>
-    <%= f.label :top_copy %>
-    <%= f.text_field :top_copy %>    
+    <%= f.label :emoticon_id %>
+    <%= f.text_field :emoticon_id %>    
+  </p>
+
+  <p>
+    <%= f.label :language_id %>
+    <%= f.text_field :language_id %>    
   </p>
 
 

@@ -1,7 +1,12 @@
 <h1>Input</h1>
 
-<%= form_for(@post, url: graphics_sessions_path) do |f| %>
-  
+<%= form_for(@post, url: copy_sessions_path) do |f| %>
+
+  <p>
+    <%= f.label :top_copy %>
+    <%= f.text_field :top_copy %>    
+  </p>
+
   <p>
     <%= f.label :bottom_copy %>
     <%= f.text_field :bottom_copy %>    
